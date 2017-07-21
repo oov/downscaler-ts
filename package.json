@@ -2,21 +2,19 @@
   "name": "downscaler",
   "version": "1.0.0",
   "description": "",
-  "main": "downscaler.js",
-  "dependencies": {
-  },
+  "main": "index.ts",
+  "dependencies": {},
   "devDependencies": {
-    "browserify": "^13.1.0",
-    "superstatic": "^4.0.3",
-    "tsify": "^2.0.2",
-    "typescript": "^2.0.3",
-    "watchify": "^3.7.0"
+    "superstatic": "^4.1.0",
+    "ts-loader": "^2.3.1",
+    "typescript": "^2.4.2",
+    "webpack": "^3.3.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "superstatic --port 10081 --debug true",
-    "watch": "watchify src/downscaler.ts -p [ tsify ] --s DownScaler -o downscaler.js -v",
-    "build": "browserify src/downscaler.ts -p [ tsify ] --s DownScaler | uglifyjs -mc > downscaler.js"
+    "watch": "webpack --progress --colors --watch",
+    "build": "webpack --optimize-minimize"
   },
   "repository": {},
   "author": "oov",
